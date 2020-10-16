@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://HEXAGON.gd" type="Script" id=1]
+
+[node name="HEXAGON" type="Node2D"]
+rotation = -6.28319
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2( -177.383, -162.521 )
+points = PoolVector2Array( 112, 43, 52, 163, 112, 273, 252, 273, 312, 163, 252, 43 )
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( -83.7939, -93.7313 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2( -92.9314, -67.367 )
+polygon = PoolVector2Array( 107.984, 40.146, 116.403, 46.3196, 58.596, 162.494, 115.28, 268.006, 249.415, 267.445, 306.66, 163.056, 247.17, 45.1971, 256.711, 40.7073, 317.324, 161.933, 255.588, 278.669, 109.107, 278.669, 45.6877, 161.933 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
